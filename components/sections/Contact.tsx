@@ -93,12 +93,15 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative py-24 sm:py-32 overflow-hidden bg-slate-50/30 dark:bg-zinc-950/20 border-t border-slate-200/40 dark:border-slate-800/40"
+      className="relative py-24 sm:py-32 overflow-hidden bg-gray-200 border-t border-gray-300"
       aria-label="Contact Section"
     >
       {/* Background glow visual */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        <div className="absolute top-1/2 left-[-150px] w-[500px] h-[500px] rounded-full bg-indigo-500/5 dark:bg-indigo-500/3 blur-3xl" />
+        <div className="absolute top-1/2 left-[-150px] w-[500px] h-[500px] rounded-full bg-indigo-500/5 blur-3xl" />
+        <div className="absolute bottom-[-100px] right-[-100px] w-[400px] h-[400px] rounded-full bg-cyan-500/5 blur-3xl" />
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
       </div>
 
       <Container>
@@ -121,14 +124,14 @@ export const Contact = () => {
             {/* Left Column: Company Information */}
             <motion.div
               variants={itemVariants}
-              className="lg:col-span-5 flex flex-col justify-between p-8 sm:p-10 rounded-2xl border border-slate-200/40 dark:border-slate-800/40 bg-white/70 dark:bg-bg-dark/40 backdrop-blur-md shadow-sm"
+              className="lg:col-span-5 flex flex-col justify-between p-8 sm:p-10 rounded-2xl border border-slate-200 bg-white/90 backdrop-blur-sm shadow-sm"
             >
               <div className="space-y-8">
                 <div>
-                  <h3 className="font-heading text-xl font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-heading text-xl font-bold text-slate-900">
                     Contact Information
                   </h3>
-                  <p className="font-sans text-sm text-slate-600 dark:text-slate-400 mt-2">
+                  <p className="font-sans text-sm text-slate-600 mt-2">
                     Connect directly with our engineering team or schedule a system architecture consultation.
                   </p>
                 </div>
@@ -136,12 +139,12 @@ export const Contact = () => {
                 <div className="space-y-5 font-sans">
                   {/* Address */}
                   <div className="flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-500/10 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
                       <MapPin className="h-5 w-5" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200">Our Office</h4>
-                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-0.5">
+                      <h4 className="text-sm font-bold text-slate-800">Our Office</h4>
+                      <p className="text-sm text-slate-600 mt-0.5">
                         100 Innovation Way, Suite 400, San Francisco, CA 94107
                       </p>
                     </div>
@@ -149,12 +152,12 @@ export const Contact = () => {
 
                   {/* Email */}
                   <div className="flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-500/10 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
                       <Mail className="h-5 w-5" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200">Email Us</h4>
-                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-0.5 hover:text-indigo-600 transition-colors">
+                      <h4 className="text-sm font-bold text-slate-800">Email Us</h4>
+                      <p className="text-sm text-slate-600 mt-0.5 hover:text-indigo-600 transition-colors">
                         info@technovasolutions.com
                       </p>
                     </div>
@@ -162,12 +165,12 @@ export const Contact = () => {
 
                   {/* Phone */}
                   <div className="flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-500/10 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
                       <Phone className="h-5 w-5" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200">Call Us</h4>
-                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-0.5">
+                      <h4 className="text-sm font-bold text-slate-800">Call Us</h4>
+                      <p className="text-sm text-slate-600 mt-0.5">
                         +1 (555) 019-2834
                       </p>
                     </div>
@@ -175,12 +178,12 @@ export const Contact = () => {
 
                   {/* Hours */}
                   <div className="flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-500/10 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
                       <Clock className="h-5 w-5" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200">Working Hours</h4>
-                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-0.5">
+                      <h4 className="text-sm font-bold text-slate-800">Working Hours</h4>
+                      <p className="text-sm text-slate-600 mt-0.5">
                         Mon - Fri, 9:00 AM - 6:00 PM PST
                       </p>
                     </div>
@@ -189,7 +192,7 @@ export const Contact = () => {
               </div>
 
               {/* Social Channels */}
-              <div className="pt-8 border-t border-slate-200/40 dark:border-slate-800/40 mt-8 lg:mt-0">
+              <div className="pt-8 border-t border-slate-200 mt-8 lg:mt-0">
                 <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-sans">
                   Follow Our Updates
                 </h4>
@@ -202,7 +205,7 @@ export const Contact = () => {
                     <a
                       key={idx}
                       href={social.href}
-                      className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-500/30 transition-all duration-300"
+                      className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-500 hover:text-indigo-600 hover:border-indigo-300 transition-all duration-300"
                       aria-label={social.label}
                     >
                       {social.icon}
@@ -215,14 +218,14 @@ export const Contact = () => {
             {/* Right Column: Form Block */}
             <motion.div
               variants={itemVariants}
-              className="lg:col-span-7 p-8 sm:p-10 rounded-2xl border border-slate-200/40 dark:border-slate-800/40 bg-white/70 dark:bg-bg-dark/40 backdrop-blur-md shadow-sm flex flex-col justify-between"
+              className="lg:col-span-7 p-8 sm:p-10 rounded-2xl border border-slate-200 bg-white/90 backdrop-blur-sm shadow-sm flex flex-col justify-between"
             >
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 flex-1 flex flex-col justify-between" noValidate>
                 <div className="space-y-5 font-sans">
                   
                   {/* Name field */}
                   <div className="flex flex-col">
-                    <label htmlFor="name" className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
+                    <label htmlFor="name" className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                       Full Name
                     </label>
                     <input
@@ -230,16 +233,16 @@ export const Contact = () => {
                       id="name"
                       placeholder="e.g. John Doe"
                       {...register("name")}
-                      className={`w-full h-11 px-4 text-sm rounded-lg border bg-white dark:bg-bg-dark/20 text-slate-900 dark:text-white transition-all duration-200 focus:outline-none focus:ring-1 ${
+                      className={`w-full h-11 px-4 text-sm rounded-lg border bg-white text-slate-900 transition-all duration-200 focus:outline-none focus:ring-1 ${
                         errors.name
                           ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500"
-                          : "border-slate-200 dark:border-slate-800 focus:border-indigo-500 focus:ring-indigo-500 dark:focus:border-indigo-400"
+                          : "border-slate-200 focus:border-indigo-500 focus:ring-indigo-500"
                       }`}
                       aria-invalid={errors.name ? "true" : "false"}
                       aria-describedby={errors.name ? "name-error" : undefined}
                     />
                     {errors.name && (
-                      <p id="name-error" className="text-rose-500 dark:text-rose-400 text-xs font-medium mt-1.5">
+                      <p id="name-error" className="text-rose-500 text-xs font-medium mt-1.5">
                         {errors.name.message}
                       </p>
                     )}
@@ -249,7 +252,7 @@ export const Contact = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     {/* Email */}
                     <div className="flex flex-col">
-                      <label htmlFor="email" className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
+                      <label htmlFor="email" className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                         Email Address
                       </label>
                       <input
@@ -257,16 +260,16 @@ export const Contact = () => {
                         id="email"
                         placeholder="john@company.com"
                         {...register("email")}
-                        className={`w-full h-11 px-4 text-sm rounded-lg border bg-white dark:bg-bg-dark/20 text-slate-900 dark:text-white transition-all duration-200 focus:outline-none focus:ring-1 ${
+                        className={`w-full h-11 px-4 text-sm rounded-lg border bg-white text-slate-900 transition-all duration-200 focus:outline-none focus:ring-1 ${
                           errors.email
                             ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500"
-                            : "border-slate-200 dark:border-slate-800 focus:border-indigo-500 focus:ring-indigo-500 dark:focus:border-indigo-400"
+                            : "border-slate-200 focus:border-indigo-500 focus:ring-indigo-500"
                         }`}
                         aria-invalid={errors.email ? "true" : "false"}
                         aria-describedby={errors.email ? "email-error" : undefined}
                       />
                       {errors.email && (
-                        <p id="email-error" className="text-rose-500 dark:text-rose-400 text-xs font-medium mt-1.5">
+                        <p id="email-error" className="text-rose-500 text-xs font-medium mt-1.5">
                           {errors.email.message}
                         </p>
                       )}
@@ -274,7 +277,7 @@ export const Contact = () => {
 
                     {/* Phone */}
                     <div className="flex flex-col">
-                      <label htmlFor="phone" className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
+                      <label htmlFor="phone" className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                         Phone Number (Optional)
                       </label>
                       <input
@@ -282,14 +285,14 @@ export const Contact = () => {
                         id="phone"
                         placeholder="+1 (555) 000-0000"
                         {...register("phone")}
-                        className="w-full h-11 px-4 text-sm rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-bg-dark/20 text-slate-900 dark:text-white transition-all duration-200 focus:outline-none focus:ring-1 focus:border-indigo-500 focus:ring-indigo-500 dark:focus:border-indigo-400"
+                        className="w-full h-11 px-4 text-sm rounded-lg border border-slate-200 bg-white text-slate-900 transition-all duration-200 focus:outline-none focus:ring-1 focus:border-indigo-500 focus:ring-indigo-500"
                       />
                     </div>
                   </div>
 
                   {/* Message */}
                   <div className="flex flex-col">
-                    <label htmlFor="message" className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
+                    <label htmlFor="message" className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                       Your Message
                     </label>
                     <textarea
@@ -297,16 +300,16 @@ export const Contact = () => {
                       rows={4}
                       placeholder="Tell us about your project requirements..."
                       {...register("message")}
-                      className={`w-full p-4 text-sm rounded-lg border bg-white dark:bg-bg-dark/20 text-slate-900 dark:text-white transition-all duration-200 focus:outline-none focus:ring-1 resize-none ${
+                      className={`w-full p-4 text-sm rounded-lg border bg-white text-slate-900 transition-all duration-200 focus:outline-none focus:ring-1 resize-none ${
                         errors.message
                           ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500"
-                          : "border-slate-200 dark:border-slate-800 focus:border-indigo-500 focus:ring-indigo-500 dark:focus:border-indigo-400"
+                          : "border-slate-200 focus:border-indigo-500 focus:ring-indigo-500"
                       }`}
                       aria-invalid={errors.message ? "true" : "false"}
                       aria-describedby={errors.message ? "message-error" : undefined}
                     />
                     {errors.message && (
-                      <p id="message-error" className="text-rose-500 dark:text-rose-400 text-xs font-medium mt-1.5">
+                      <p id="message-error" className="text-rose-500 text-xs font-medium mt-1.5">
                         {errors.message.message}
                       </p>
                     )}
@@ -314,7 +317,7 @@ export const Contact = () => {
                 </div>
 
                 {/* Submit button row */}
-                <div className="pt-6 mt-6 border-t border-slate-200/40 dark:border-slate-800/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="pt-6 mt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="w-full sm:w-auto">
                     <Button
                       type="submit"
@@ -334,7 +337,7 @@ export const Contact = () => {
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: 20 }}
-                        className="flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400"
+                        className="flex items-center gap-2 text-xs font-semibold text-emerald-600"
                       >
                         <CheckCircle2 className="h-4.5 w-4.5 text-emerald-500" />
                         <span>Message sent successfully!</span>

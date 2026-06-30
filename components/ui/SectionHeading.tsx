@@ -36,7 +36,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       {badge && (
         <span
           className={cn(
-            "inline-flex items-center rounded-full bg-indigo-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:bg-indigo-400/10 dark:text-indigo-400 mb-3 sm:mb-4",
+            "inline-flex items-center rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-indigo-700 mb-3 sm:mb-4",
             badgeClassName
           )}
         >
@@ -45,7 +45,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       )}
       <h2
         className={cn(
-          "font-heading text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl md:text-5xl leading-tight sm:leading-none",
+          "font-heading text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl leading-tight sm:leading-none",
           titleClassName
         )}
       >
@@ -54,7 +54,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       {subtitle && (
         <p
           className={cn(
-            "mt-4 text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed font-sans",
+            "mt-4 text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed font-sans",
             subtitleClassName
           )}
         >

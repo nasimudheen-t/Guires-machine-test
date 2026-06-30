@@ -32,13 +32,16 @@ export const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="relative py-24 sm:py-32 overflow-hidden bg-white dark:bg-bg-dark border-t border-slate-200/40 dark:border-slate-800/40"
+      className="relative py-24 sm:py-32 overflow-hidden bg-white border-t border-slate-200"
       aria-label="Testimonials Section"
     >
       {/* Background visual detail */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         {/* Soft glowing blob bottom right */}
-        <div className="absolute bottom-[-150px] right-[-150px] w-[600px] h-[600px] rounded-full bg-cyan-500/5 dark:bg-cyan-500/3 blur-3xl" />
+        <div className="absolute bottom-[-150px] right-[-150px] w-[600px] h-[600px] rounded-full bg-cyan-500/5 blur-3xl" />
+        <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] rounded-full bg-indigo-500/5 blur-3xl" />
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
       </div>
 
       <Container>
