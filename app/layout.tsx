@@ -53,6 +53,13 @@ export const metadata: Metadata = {
     description:
       "Accelerating business transformation through cutting-edge technology services, custom software, and consulting.",
   },
+  alternates: {
+    canonical: "https://technovasolutions.com",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
