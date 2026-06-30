@@ -13,62 +13,74 @@ export interface BlogPost {
 export const blogContent = {
   badge: "Insights & Press",
   title: "Latest Technical Articles",
-  description: "Stay up to date with the latest advancements in web architecture, AI engineering, cloud security, and design patterns.",
+  description:
+    "Stay updated with industry trends, emerging technologies, development best practices, cloud innovations, and digital transformation insights from our experts.",
 };
 
 export const blogData: BlogPost[] = [
   {
     id: "nextjs-15-layouts",
-    title: "Demystifying Next.js 15 App Router Layouts",
-    description: "Explore the internal rendering pipelines, nested route segment caching, and state preservation mechanics of Next.js 15 layout systems.",
+    title: "Mastering Next.js 15 App Router for Scalable Applications",
+    description:
+      "Discover how the App Router simplifies layouts, improves routing, and enhances performance for modern web applications.",
     category: "Web Development",
-    coverImage: "/images/blog_software_engineering.png",
+    coverImage:
+      "/images/web-development.png",
     publishDate: "June 28, 2026",
     readTime: "5 min read",
   },
   {
     id: "zero-trust-cloud",
-    title: "Architecting Zero-Trust Multi-Region Databases",
-    description: "A comprehensive deep dive into serverless network topology, multi-region cluster scaling, and database permission layers.",
+    title: "Building Secure Cloud Infrastructure with Zero Trust",
+    description:
+      "Learn modern cloud security strategies, multi-cloud architecture, and best practices for protecting enterprise applications.",
     category: "Cloud Solutions",
-    coverImage: "/images/blog_cloud_infrastructure.png",
+    coverImage:
+      "/images/cloud-solutions.png",
     publishDate: "June 22, 2026",
     readTime: "8 min read",
   },
   {
     id: "autonomous-ai-agents",
-    title: "The Rise of Autonomous AI Agents in Enterprise Systems",
-    description: "How vector database embeddings, automated prompt chaining, and memory loops are transforming customer workflows and support queues.",
-    category: "AI & ML",
-    coverImage: "/images/blog_artificial_intelligence.png",
+    title: "How AI is Transforming Modern Businesses",
+    description:
+      "Explore how artificial intelligence, automation, and machine learning are helping companies improve efficiency and customer experience.",
+    category: "Artificial Intelligence",
+    coverImage:
+      "/images/artificial-intelligence.png",
     publishDate: "June 15, 2026",
-    readTime: "12 min read",
+    readTime: "7 min read",
   },
   {
     id: "figma-to-tailwind",
-    title: "Modern Web Design Systems: Figma to Tailwind v4",
-    description: "Optimize CSS styling handoffs by aligning Figma tokens directly with Tailwind v4 CSS theme variables for seamless styling code conversion.",
+    title: "Creating Stunning UI Designs with Figma and Tailwind CSS",
+    description:
+      "Learn how designers and developers collaborate efficiently to build responsive, accessible, and visually appealing interfaces.",
     category: "UI/UX Design",
-    coverImage: "/images/blog_software_engineering.png",
+    coverImage: "/images/ui-ux-design.png",
     publishDate: "June 08, 2026",
     readTime: "6 min read",
   },
   {
     id: "scale-react-native",
-    title: "Scale Testing React Native for High Traffic Events",
-    description: "Learn how we stress test bridges, memory leaks, and native modules to prepare enterprise applications for sudden user spikes.",
-    category: "Mobile Apps",
-    coverImage: "/images/blog_cloud_infrastructure.png",
+    title: "Developing High-Performance Mobile Applications",
+    description:
+      "Discover techniques for building scalable mobile apps with React Native, optimized performance, and exceptional user experience.",
+    category: "Mobile Development",
+    coverImage:
+      "/images/mobile-development.png",
     publishDate: "June 01, 2026",
     readTime: "9 min read",
   },
   {
     id: "core-web-vitals-cls",
-    title: "Advanced Web Performance: Enhancing Layout Shifts",
-    description: "A practical guide to identifying hidden Cumulative Layout Shifts (CLS), preloading font assets, and sizing images dynamically.",
-    category: "Web Development",
-    coverImage: "/images/blog_artificial_intelligence.png",
+    title: "Improving Core Web Vitals for Better User Experience",
+    description:
+      "Optimize website speed, reduce layout shifts, and improve performance metrics to deliver faster and smoother web experiences.",
+    category: "Performance",
+    coverImage:
+      "/images/web-performance.png",
     publishDate: "May 25, 2026",
-    readTime: "7 min read",
+    readTime: "6 min read",
   },
 ];

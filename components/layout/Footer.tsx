@@ -6,7 +6,7 @@ import { Cpu, ArrowUp } from "lucide-react";
 import { Container } from "./Container";
 import { navigationLinks } from "@/data/navigation";
 
-// Custom SVG Brand Icons since newer lucide-react versions have deprecated them
+// Custom SVG Brand Icons
 const TwitterIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
@@ -47,88 +47,105 @@ export const Footer = () => {
         behavior: "smooth",
       });
 
-      // Update URL hash
       window.history.pushState(null, "", href);
-      
-      // Accessibility focus management
       targetElement.focus({ preventScroll: true });
     }
   };
 
   return (
-    <footer className="bg-white dark:bg-bg-dark border-t border-slate-200/40 dark:border-slate-800/40 py-12 sm:py-16 font-sans">
+    <footer className="bg-gray-200 border-t border-gray-300 py-12 sm:py-16 font-sans">
       <Container>
         <div className="flex flex-col gap-10 md:gap-12">
           
-          {/* Top Row: Logo, Navigation, Social Links */}
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 pb-8 border-b border-slate-200/40 dark:border-slate-800/40">
+          {/* Main Footer Content */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-8 border-b border-gray-300">
             
-            {/* Logo */}
-            <Link
-              href="#home"
-              onClick={(e) => handleNavClick(e, "#home")}
-              className="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-md"
-              aria-label="TechNova Solutions Home"
-            >
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-tr from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-500/10 group-hover:scale-105 transition-transform duration-200">
-                <Cpu className="h-5 w-5" />
-              </div>
-              <span className="font-heading text-lg font-bold tracking-tight text-slate-900 dark:text-white">
-                TechNova <span className="text-indigo-600 dark:text-indigo-400 font-semibold">Solutions</span>
-              </span>
-            </Link>
+            {/* Brand Column */}
+            <div className="md:col-span-4 flex flex-col gap-4">
+              <Link
+                href="#home"
+                onClick={(e) => handleNavClick(e, "#home")}
+                className="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-md w-fit"
+                aria-label="TechNova Solutions Home"
+              >
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600 text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform duration-200">
+                  <Cpu className="h-5 w-5" />
+                </div>
+                <span className="font-heading text-lg font-bold tracking-tight text-slate-900">
+                  TechNova <span className="text-indigo-600 font-semibold">Solutions</span>
+                </span>
+              </Link>
+              <p className="text-sm text-slate-600 max-w-xs">
+                Empowering businesses through innovative technology solutions and scalable digital products.
+              </p>
+            </div>
 
-            {/* Navigation link list */}
-            <nav aria-label="Footer Navigation">
-              <ul className="flex flex-wrap items-center gap-x-6 gap-y-2.5">
-                {navigationLinks.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      onClick={(e) => handleNavClick(e, link.href)}
-                      className="text-sm font-medium text-slate-500 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-md py-1"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
+            {/* Navigation Links */}
+            <div className="md:col-span-5">
+              <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4">
+                Quick Links
+              </h4>
+              <nav aria-label="Footer Navigation">
+                <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  {navigationLinks.map((link) => (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        onClick={(e) => handleNavClick(e, link.href)}
+                        className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-md py-1 px-0.5 inline-block"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
+
+            {/* Social & Contact */}
+            <div className="md:col-span-3">
+              <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4">
+                Connect With Us
+              </h4>
+              <div className="flex items-center gap-3 mb-4">
+                {[
+                  { icon: <TwitterIcon className="h-4 w-4" />, href: "#", label: "Twitter" },
+                  { icon: <LinkedinIcon className="h-4 w-4" />, href: "#", label: "LinkedIn" },
+                  { icon: <GithubIcon className="h-4 w-4" />, href: "#", label: "GitHub" },
+                ].map((social, idx) => (
+                  <a
+                    key={idx}
+                    href={social.href}
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 text-slate-500 hover:text-indigo-600 hover:border-indigo-300 hover:bg-white transition-all duration-300"
+                    aria-label={social.label}
+                  >
+                    {social.icon}
+                  </a>
                 ))}
-              </ul>
-            </nav>
-
-            {/* Social channels */}
-            <div className="flex items-center gap-3">
-              {[
-                { icon: <TwitterIcon className="h-4 w-4" />, href: "#", label: "Twitter" },
-                { icon: <LinkedinIcon className="h-4 w-4" />, href: "#", label: "LinkedIn" },
-                { icon: <GithubIcon className="h-4 w-4" />, href: "#", label: "GitHub" },
-              ].map((social, idx) => (
-                <a
-                  key={idx}
-                  href={social.href}
-                  className="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 dark:border-slate-800 text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-500/30 transition-all duration-300"
-                  aria-label={social.label}
-                >
-                  {social.icon}
-                </a>
-              ))}
+              </div>
+              <p className="text-xs text-slate-500">
+                <span className="block">info@technovasolutions.com</span>
+                <span className="block mt-0.5">+1 (555) 019-2834</span>
+              </p>
             </div>
           </div>
 
-          {/* Bottom Row: Copyright, Back to Top */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+          {/* Bottom Row: Copyright & Back to Top */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             
             {/* Copyright */}
-            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-500 text-center sm:text-left">
-              &copy; {new Date().getFullYear()} TechNova Solutions. All rights reserved. Built for technical demonstration.
+            <p className="text-xs text-slate-500 text-center sm:text-left">
+              &copy; {new Date().getFullYear()} TechNova Solutions. All rights reserved.
             </p>
 
             {/* Back to Top Button */}
             <button
               onClick={handleBackToTop}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 dark:border-slate-800 text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-500/30 bg-white dark:bg-bg-dark hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm"
+              className="flex items-center gap-2 text-xs font-medium text-slate-600 hover:text-indigo-600 transition-colors group"
               aria-label="Back to top of page"
             >
-              <ArrowUp className="h-4 w-4" />
+              <span>Back to Top</span>
+              <ArrowUp className="h-3.5 w-3.5 group-hover:-translate-y-0.5 transition-transform" />
             </button>
           </div>
         </div>
