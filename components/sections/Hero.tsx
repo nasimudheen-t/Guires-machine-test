@@ -26,7 +26,8 @@ export const Hero = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.16, 1, 0.3, 1], // Custom cubic-bezier for smooth deceleration
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ease: [0.16, 1, 0.3, 1] as any, // Custom cubic-bezier for smooth deceleration
       },
     },
   };
