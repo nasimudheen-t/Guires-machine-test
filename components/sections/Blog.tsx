@@ -1,10 +1,9 @@
 import React from "react";
-import { fetchBlogPosts } from "@/lib/api";
-import { BlogContent } from "../blog/BlogContent";
 
+import { BlogContent } from "../blog/BlogContent";
+import { blogData } from "@/data/blogs";
 export const Blog = async () => {
   // Fetch posts on the server side
-  const posts = await fetchBlogPosts();
-  
-  return <BlogContent posts={posts} />;
+ 
+  return <BlogContent posts={blogData} />;
 };
