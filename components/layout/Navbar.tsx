@@ -32,7 +32,7 @@ export const Navbar = () => {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: "-30% 0px -50% 0px", // triggers when section occupies the active view area
+      rootMargin: "-30% 0px -50% 0px",
       threshold: 0,
     };
 
@@ -68,7 +68,7 @@ export const Navbar = () => {
     };
     if (isOpen) {
       window.addEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "hidden"; // Prevent body scroll when menu open
+      document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
@@ -78,27 +78,30 @@ export const Navbar = () => {
     };
   }, [isOpen]);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
     e.preventDefault();
     const targetId = href.substring(1);
     const targetElement = document.getElementById(targetId);
 
     if (targetElement) {
       const navbarHeight = 80;
-      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - navbarHeight;
+      const targetPosition =
+        targetElement.getBoundingClientRect().top +
+        window.scrollY -
+        navbarHeight;
 
       window.scrollTo({
         top: targetPosition,
         behavior: "smooth",
       });
 
-      // Update URL hash
       window.history.pushState(null, "", href);
-      
-      // Accessibility focus management
       targetElement.focus({ preventScroll: true });
     }
-    
+
     setIsOpen(false);
   };
 
@@ -107,12 +110,15 @@ export const Navbar = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ease-in-out",
         isScrolled
-          ? "bg-white/80 dark:bg-bg-dark/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 shadow-sm py-4"
-          : "bg-transparent border-b border-transparent py-6"
+          ? "bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm py-4"
+          : "bg-transparent border-b border-transparent py-6",
       )}
     >
       <Container>
-        <nav className="flex items-center justify-between" aria-label="Global Navigation">
+        <nav
+          className="flex items-center justify-between"
+          aria-label="Global Navigation"
+        >
           {/* Logo Section */}
           <Link
             href="#home"
@@ -124,8 +130,9 @@ export const Navbar = () => {
               <Cpu className="h-5.5 w-5.5" />
               <div className="absolute inset-0 rounded-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
             </div>
-            <span className="font-heading text-xl font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200">
-              TechNova <span className="text-indigo-600 dark:text-indigo-400 font-semibold">Solutions</span>
+            <span className="font-heading text-xl font-bold tracking-tight text-slate-900 group-hover:text-indigo-600 transition-colors duration-200">
+              TechNova{" "}
+              <span className="text-indigo-600 font-semibold">Solutions</span>
             </span>
           </Link>
 
@@ -142,14 +149,14 @@ export const Navbar = () => {
                       className={cn(
                         "relative py-2 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-md px-1",
                         isActive
-                          ? "text-indigo-600 dark:text-indigo-400"
-                          : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
+                          ? "text-indigo-600"
+                          : "text-slate-700 hover:text-indigo-600",
                       )}
                     >
                       {link.label}
                       {/* Premium indicator line */}
                       {isActive && (
-                        <span className="absolute bottom-0 left-1 right-1 h-0.5 rounded-full bg-indigo-600 dark:bg-indigo-400 animate-fade-in" />
+                        <span className="absolute bottom-0 left-1 right-1 h-0.5 rounded-full bg-indigo-600 animate-fade-in" />
                       )}
                     </a>
                   </li>
@@ -158,7 +165,7 @@ export const Navbar = () => {
             </ul>
 
             {/* Desktop CTA */}
-            <div className="border-l border-slate-200 dark:border-slate-800 pl-8">
+            <div className="border-l border-slate-200 pl-8">
               <Button
                 variant="primary"
                 size="sm"
@@ -179,12 +186,16 @@ export const Navbar = () => {
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-lg text-slate-600 hover:text-slate-950 dark:text-slate-400 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 transition-colors duration-200"
+              className="inline-flex items-center justify-center p-2 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 transition-colors duration-200"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
               aria-label={isOpen ? "Close main menu" : "Open main menu"}
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </nav>
@@ -194,10 +205,10 @@ export const Navbar = () => {
       <div
         id="mobile-menu"
         className={cn(
-          "fixed inset-x-0 top-[72px] bottom-0 z-45 bg-white/95 dark:bg-bg-dark/95 backdrop-blur-lg border-t border-slate-200/50 dark:border-slate-800/50 md:hidden transition-all duration-300 ease-in-out",
+          "fixed inset-x-0 top-[72px] bottom-0 z-45 bg-white/95 backdrop-blur-lg border-t border-slate-200 md:hidden transition-all duration-300 ease-in-out",
           isOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
-            : "opacity-0 -translate-y-4 pointer-events-none"
+            : "opacity-0 -translate-y-4 pointer-events-none",
         )}
       >
         <Container className="py-8 h-full flex flex-col justify-between overflow-y-auto">
@@ -209,7 +220,9 @@ export const Navbar = () => {
                   key={link.href}
                   className={cn(
                     "transition-all duration-300 transform",
-                    isOpen ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
+                    isOpen
+                      ? "translate-x-0 opacity-100"
+                      : "-translate-x-4 opacity-0",
                   )}
                   style={{ transitionDelay: `${idx * 40}ms` }}
                 >
@@ -219,8 +232,8 @@ export const Navbar = () => {
                     className={cn(
                       "block py-3 text-lg font-semibold tracking-tight transition-colors duration-200 rounded-lg px-3 -mx-3",
                       isActive
-                        ? "text-indigo-600 dark:text-indigo-400 bg-indigo-500/5"
-                        : "text-slate-800 hover:text-slate-950 hover:bg-slate-50 dark:text-slate-200 dark:hover:text-white dark:hover:bg-slate-900/50"
+                        ? "text-indigo-600 bg-indigo-50"
+                        : "text-slate-800 hover:text-indigo-600 hover:bg-slate-50",
                     )}
                     aria-current={isActive ? "page" : undefined}
                   >
@@ -233,8 +246,8 @@ export const Navbar = () => {
 
           <div
             className={cn(
-              "mt-8 pt-8 border-t border-slate-200 dark:border-slate-800 transition-all duration-300 transform",
-              isOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+              "mt-8 pt-8 border-t border-slate-200 transition-all duration-300 transform",
+              isOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
             )}
             style={{ transitionDelay: `${navigationLinks.length * 40}ms` }}
           >
