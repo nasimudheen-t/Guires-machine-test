@@ -1,14 +1,4 @@
-// Blog Section Data Config
-
-export interface BlogPost {
-  id: string;
-  title: string;
-  description: string;
-  category: string;
-  coverImage: string;
-  publishDate: string;
-  readTime: string;
-}
+import { BlogPost } from "@/types/blog";
 
 export const blogContent = {
   badge: "Insights & Press",
